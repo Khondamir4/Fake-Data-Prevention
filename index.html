@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fake Data Prevention</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">System Security Project</p>
+          <h1>Fake Data Prevention</h1>
+          <p class="lead">
+            Verify that data came from a certified source and was not modified
+            after signing.
+          </p>
+        </div>
+        <div class="status-card" aria-live="polite">
+          <span class="status-label">Verifier Status</span>
+          <strong id="statusText">Waiting for keys</strong>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Cryptographic workflow">
+        <aside class="panel controls">
+          <h2>Actions</h2>
+          <button id="issueKeysBtn" type="button">Issue Keys</button>
+          <button id="signDataBtn" type="button" disabled>Sign Data</button>
+          <button id="verifyBtn" type="button" disabled>Verify</button>
+          <button id="tamperBtn" type="button" disabled>Tamper Payload</button>
+          <button id="untrustedBtn" type="button" disabled>Use Untrusted Producer</button>
+          <button id="resetBtn" type="button">Reset</button>
+        </aside>
+
+        <section class="panel data-panel">
+          <div class="panel-header">
+            <h2>Sensor Data</h2>
+            <span id="dataBadge" class="badge muted">unsigned</span>
+          </div>
+          <label>
+            Device ID
+            <input id="deviceId" value="edge-meter-17">
+          </label>
+          <label>
+            Location
+            <input id="location" value="Smart Building A">
+          </label>
+          <label>
+            Energy Usage
+            <input id="reading" type="number" value="42.7" step="0.1">
+          </label>
+          <label>
+            Timestamp
+            <input id="timestamp" readonly>
+          </label>
+        </section>
+
+        <section class="panel result-panel">
+          <div class="panel-header">
+            <h2>Verification</h2>
+            <span id="trustBadge" class="badge muted">not checked</span>
+          </div>
+          <div id="resultList" class="result-list">
+            <p class="empty">Create keys and sign data to begin.</p>
+          </div>
+        </section>
+      </section>
+
+      <section class="artifacts">
+        <article class="panel artifact">
+          <h2>Producer Certificate</h2>
+          <pre id="certificateOutput">No certificate issued.</pre>
+        </article>
+        <article class="panel artifact">
+          <h2>Signed JWT</h2>
+          <pre id="tokenOutput">No token signed.</pre>
+        </article>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
