@@ -10,7 +10,6 @@
     <main class="shell">
       <section class="hero">
         <div>
-          <p class="eyebrow">System Security Project</p>
           <h1>Fake Data Prevention</h1>
           <p class="lead">
             Verify that data came from a certified source and was not modified
@@ -31,6 +30,7 @@
           <button id="verifyBtn" type="button" disabled>Verify</button>
           <button id="tamperBtn" type="button" disabled>Tamper Payload</button>
           <button id="untrustedBtn" type="button" disabled>Use Untrusted Producer</button>
+          <button id="expiredBtn" type="button" disabled>Expire Certificate</button>
           <button id="resetBtn" type="button">Reset</button>
         </aside>
 
@@ -77,6 +77,14 @@
           <h2>Signed JWT</h2>
           <pre id="tokenOutput">No token signed.</pre>
         </article>
+      </section>
+
+      <section class="panel audit-panel">
+        <div class="panel-header">
+          <h2>Audit Log</h2>
+          <span class="badge muted">traceability</span>
+        </div>
+        <ol id="auditLog" class="audit-log"></ol>
       </section>
     </main>
 

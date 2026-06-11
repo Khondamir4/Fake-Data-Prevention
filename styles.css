@@ -43,15 +43,6 @@ input {
   padding: 26px 0 18px;
 }
 
-.eyebrow {
-  margin: 0 0 8px;
-  color: var(--blue);
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
-
 h1,
 h2,
 p {
@@ -294,6 +285,32 @@ pre {
   padding: 14px;
   font-size: 0.82rem;
   line-height: 1.45;
+}
+
+.audit-panel {
+  margin-top: 16px;
+}
+
+.audit-log {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.audit-log li {
+  padding: 8px 0;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.audit-log strong {
+  display: block;
+  color: var(--ink);
+}
+
+.audit-log span {
+  font-size: 0.9rem;
 }
 
 @media (max-width: 900px) {
